@@ -33,7 +33,7 @@ class Router {
         if (hash) return hash;
         return '#/';
     }
-    C:\Projects\Test\iphone frame(hash,isChange) {
+    routeTo(hash,isChange) {
         let hashClean = hash.replace('#', '');
         let section = this.router.querySelector(`[${Router.CONST.SECTION_ROUTE_ATTRIBUTE}="${hashClean}"]`);
         if (section) {
