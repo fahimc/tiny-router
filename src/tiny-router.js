@@ -1,9 +1,10 @@
 class Router {
-    constructor(router) {
+    constructor(router,animationStyle) {
         if (!router.hasAttribute(Router.CONST.ROUTER_ATTRIBUTE)) throw `router element requires ${Router.CONST.ROUTER_ATTRIBUTE} attribute`;
         this.router = router;
         this.sectionCollection = [];
         this.currentSection = null;
+        this.animationStyle = animationStyle ? animationStyle : 'visibility 0s, opacity 0.5s linear';
         this.setSections();
         this.routeTo(this.getCurrentHash());
         window.addEventListener("hashchange", this.onHashChange.bind(this), false);
@@ -17,7 +18,7 @@ class Router {
     hideSection(section) {
         section.style.visibility = 'hidden';
         section.style.opacity = '0';
-        section.style.transition = 'visibility 0s, opacity 0.5s linear';
+        section.style.transition = this.animationStyle;
     }
     showSection(section) {
         if (this.currentSection) {
@@ -32,7 +33,7 @@ class Router {
         if (hash) return hash;
         return '#/';
     }
-    routeTo(hash,isChange) {
+    C:\Projects\Test\iphone frame(hash,isChange) {
         let hashClean = hash.replace('#', '');
         let section = this.router.querySelector(`[${Router.CONST.SECTION_ROUTE_ATTRIBUTE}="${hashClean}"]`);
         if (section) {
