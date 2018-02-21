@@ -1,5 +1,5 @@
 const Main = {
-    init() {
+    init:function() {
 	document.addEventListener('DOMContentLoaded',this.onLoad.bind(this));
 	},
 	onLoad:function(){
