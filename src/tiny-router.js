@@ -39,7 +39,8 @@ class Router {
         	this.showSection(section);
         	if(!isChange)history.pushState(null, null, hash);
         } else{
-        	this.routeTo('#/');
+            section = this.router.querySelector(`[${Router.CONST.SECTION_ROUTE_ATTRIBUTE}="/"]`);
+        	if(section)this.showSection(section);
         	if(!isChange)history.pushState(null, null, '#/');
         }
     }

@@ -19,7 +19,7 @@ gulp.task('default', function() {
          gulp.src(['src/polyfills/*.js', 'src/*.js'])
         .pipe(concat('tiny-router.js'))
         .pipe(babel({
-            presets: ['es2015']
+            presets: ['env']
         }))
         .pipe(ext_replace('.es5.js'))
         .pipe(minify({
