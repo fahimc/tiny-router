@@ -15,6 +15,7 @@ class Router {
         });
     }
     hideSection(section) {
+        section.style.position = 'absolute';
         section.style.visibility = 'hidden';
         section.style.opacity = '0';
         section.style.transition = 'visibility 0s, opacity 0.5s linear';
