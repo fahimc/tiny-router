@@ -21,11 +21,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 })();
 
 var Router = function () {
-    function Router(router) {
+    function Router(router, transitionStyle) {
         _classCallCheck(this, Router);
 
         if (!router.hasAttribute(Router.CONST.ROUTER_ATTRIBUTE)) throw 'router element requires ' + Router.CONST.ROUTER_ATTRIBUTE + ' attribute';
         this.router = router;
+        this.transitionStyle = transitionStyle ? transitionStyle : 'visibility 0s, opacity 0.5s linear';
         this.sectionCollection = [];
         this.currentSection = null;
         this.setSections();
@@ -49,7 +50,7 @@ var Router = function () {
             section.style.position = 'absolute';
             section.style.visibility = 'hidden';
             section.style.opacity = '0';
-            section.style.transition = 'visibility 0s, opacity 0.5s linear';
+            section.style.transition = this.transitionStyle;
         }
     }, {
         key: 'showSection',

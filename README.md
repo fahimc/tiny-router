@@ -1,4 +1,5 @@
 
+
 # Tiny Router
 This is a small library in ES6 to do basic routing for sites and apps. No for use with other frameworks such as angular or view but it may work. This is a standalone routing library and will work with other libraries.
 
@@ -42,4 +43,11 @@ This method will allow you to navigate to another route.
 ```js
 let router = new Router(document.querySelector('#main-router'));
 router.routeTo('#/home');
+```
+## Change Transition Animation Style  
+
+If you wish to change the tranistion style the you can do this by adding in a string of the tranisition style as the second parameter in the `Router` class. 
+
+```js
+let router = new Router(document.querySelector('#main-router'), 'visibility 0s, opacity 0.5s linear');
 ```

@@ -1,7 +1,8 @@
 class Router {
-    constructor(router) {
+    constructor(router,transitionStyle) {
         if (!router.hasAttribute(Router.CONST.ROUTER_ATTRIBUTE)) throw `router element requires ${Router.CONST.ROUTER_ATTRIBUTE} attribute`;
         this.router = router;
+        this.transitionStyle = transitionStyle ? transitionStyle : 'visibility 0s, opacity 0.5s linear';
         this.sectionCollection = [];
         this.currentSection = null;
         this.setSections();
@@ -18,7 +19,7 @@ class Router {
         section.style.position = 'absolute';
         section.style.visibility = 'hidden';
         section.style.opacity = '0';
-        section.style.transition = 'visibility 0s, opacity 0.5s linear';
+        section.style.transition = this.transitionStyle;
     }
     showSection(section) {
         if (this.currentSection) {
