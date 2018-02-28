@@ -18,6 +18,8 @@ class Router {
     hideSection(section) {
         section.style.position = 'absolute';
         section.style.visibility = 'hidden';
+        section.style.height = '100%';
+        section.style.overflow = 'hidden';
         section.style.opacity = '0';
         section.style.transition = this.transitionStyle;
     }
@@ -27,6 +29,8 @@ class Router {
         }
         this.currentSection = section;
         section.style.visibility = 'visible';
+        section.style.height = 'auto';
+        section.style.overflow = 'inherit';
         section.style.opacity = '1';
     }
     getCurrentHash() {
